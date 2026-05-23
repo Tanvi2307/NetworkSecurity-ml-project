@@ -18,6 +18,8 @@ from sklearn.ensemble import (
     RandomForestClassifier,
 )
 import mlflow
+import dagshub #dagshub is a platform for version control and collaboration in data science projects, similar to GitHub but with additional features for tracking machine learning experiments and models. It provides tools for managing code, data, and models in a unified way, making it easier for data scientists to collaborate and share their work. By initializing DagsHub with MLflow enabled, you can track your machine learning experiments and models directly within the DagsHub platform.
+dagshub.init(repo_owner='Tanvi2307', repo_name='NetworkSecurity-ml-project', mlflow=True) # Initialize DagsHub and enable MLflow tracking
 
 class ModelTrainer:
     def __init__(self,model_trainer_config:ModelTrainerConfig,data_transformation_artifact:DataTransformationArtifact):
@@ -31,7 +33,7 @@ class ModelTrainer:
         # mlflow.set_registry_uri("https://dagshub.com/krishnaik06/networksecurity.mlflow")
         # tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
         # ✅ set tracking uri to project folder, Tell MLflow Where to Save the Experiment and Model Artifacts 
-        mlflow.set_tracking_uri("mlruns")
+        # mlflow.set_tracking_uri("mlruns")
         with mlflow.start_run(): #opens a new experiment run → everything inside gets recorded 
             f1_score=classificationmetric.f1_score
             precision_score=classificationmetric.precision_score
@@ -108,8 +110,8 @@ class ModelTrainer:
 
         Network_Model=NetworkModel(preprocessor=preprocessor,model=best_model)
         save_object(self.model_trainer_config.trained_model_file_path,obj=NetworkModel)
-        #model pusher
-        # save_object("final_model/model.pkl",best_model)
+        # model pusher
+        save_object("final_model/model.pkl",best_model)
         
 
         ## Model Trainer Artifact

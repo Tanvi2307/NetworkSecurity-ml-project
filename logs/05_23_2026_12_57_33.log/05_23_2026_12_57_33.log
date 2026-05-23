@@ -1,0 +1,6 @@
+[ 2026-05-23 12:57:42,596 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-05-23 12:57:42,625 ] 107 dagshub - INFO - Accessing as Tanvi2307
+[ 2026-05-23 12:57:43,608 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/Tanvi2307/NetworkSecurity-ml-project "HTTP/1.1 200 OK"
+[ 2026-05-23 12:57:44,491 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-05-23 12:57:44,495 ] 107 dagshub - INFO - Initialized MLflow to track repo "Tanvi2307/NetworkSecurity-ml-project"
+[ 2026-05-23 12:57:44,496 ] 107 dagshub - INFO - Repository Tanvi2307/NetworkSecurity-ml-project initialized!
